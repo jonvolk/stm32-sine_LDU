@@ -535,7 +535,7 @@ static s32fp ProcessThrottle()
    s32fp throtSpnt, finalSpnt, modThrotRamp, potPcnt; //added modThroTramp and potPcnt variable
 
    //BEGIN ADDED TRASH/////////////////////////////////
-   potPcnt = ((Param::GetInt(Param::pot))/((Param::GetInt(Param::potmax))-(Param::GetInt(Param::potmin))))*1;
+   potPcnt = ((Param::GetInt(Param::pot))/((Param::GetInt(Param::potmax))-(Param::GetInt(Param::potmin))))*100;
 
    if (potPcnt < 40)
    {

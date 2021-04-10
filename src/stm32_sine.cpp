@@ -413,9 +413,9 @@ static s32fp ProcessUdc()
       //BEGIN ADDED TRASH////////////////
       s32fp fweakVal;
 
-      if (Param::Get(Param::potnom) > 35)
+      if (Param::GetInt(Param::potnom) > 35)  
       {
-         fweakVal = MAP(Param::Get(Param::potnom), 36, 100, 400, (Param::Get(Param::fweak)));
+         fweakVal = MAP(Param::GetInt(Param::potnom), 36, 100, 400, (Param::Get(Param::fweak)));
       }
       else
       {
@@ -532,20 +532,22 @@ static void GetCruiseCreepCommand(s32fp &finalSpnt, s32fp throtSpnt)
 
 static s32fp ProcessThrottle()
 {
-   s32fp throtSpnt, finalSpnt, modThrotRamp; //added modThroTramp variable
+   s32fp throtSpnt, finalSpnt, modThrotRamp, potPcnt; //added modThroTramp and potPcnt variable
 
    //BEGIN ADDED TRASH/////////////////////////////////
-   if (Param::Get(Param::pot) < 1500)
+   potPcnt = ((Param::GetInt(Param::pot))/((Param::GetInt(Param::potmax))-(Param::GetInt(Param::potmin))))*1;
+
+   if (potPcnt < 40)
    {
-      modThrotRamp = .45;
+      modThrotRamp = FP_FROMFLT(.45); //address FP
    }
-   else if (Param::Get(Param::pot) >= 1500 && Param::Get(Param::pot) < 3000)
+   else if (potPcnt >= 40 && potPcnt < 90)
    {
-      modThrotRamp = MAP(Param::Get(Param::pot), 1500, 3700, .45, Param::Get(Param::throtramp));
+      modThrotRamp = MAP(potPcnt, 1500, 3700, 1, Param::GetInt(Param::throtramp));
    }
    else
    {
-      modThrotRamp = Param::Get(Param::throtramp);
+      modThrotRamp = Param::GetInt(Param::throtramp);
    }
    //END ADDED TRASH//////////////////////////////////
 

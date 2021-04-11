@@ -98,22 +98,6 @@ void PwmGeneration::SetTorquePercent(s32fp torque)
       {
          s32fp fstat = Param::Get(Param::fstat);
          s32fp fweak = Param::Get(Param::fweakcalc); // original code
-
-         /*/BEGIN ADDED TRASH////////////////
-         s32fp fweakVal;
-
-         if (Param::Get(Param::potnom) > 35)
-         {
-            fweakVal = MAP(Param::Get(Param::potnom), 36, 100, 400, (Param::Get(Param::fweakcalc)));
-         }
-         else
-         {
-            fweakVal = 400;
-         }
-
-         s32fp fweak = fweakVal;
-         //END ADDED TRASH/////////////////*/
-
          s32fp fslipmax = Param::Get(Param::fslipmax);
 
          if (fstat > fweak)

@@ -415,11 +415,11 @@ static s32fp ProcessUdc()
 
       if (Param::GetInt(Param::potnom) > 35)  
       {
-         fweakVal = MAP(Param::GetInt(Param::potnom), 36, 100, 400, (Param::GetInt(Param::fweak)));
+         fweakVal = MAP(Param::GetInt(Param::potnom), 36, 100, (Param::GetInt(Param::fweakstrt)), (Param::GetInt(Param::fweak)));
       }
       else
       {
-         fweakVal = 400;//Param::Get(Param::fweakstrt);
+         fweakVal = Param::GetInt(Param::fweakstrt);
       } 
 
       s32fp fweak = FP_FROMINT(fweakVal);

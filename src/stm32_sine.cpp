@@ -419,7 +419,7 @@ static s32fp ProcessUdc()
       }
       else
       {
-         fweakVal = Param::Get(Param::fweakstrt);
+         fweakVal = 400;//Param::Get(Param::fweakstrt);
       } 
 
       s32fp fweak = FP_FROMINT(fweakVal);
@@ -543,7 +543,7 @@ static s32fp ProcessThrottle()
    }
    else if (potPcnt >= 10 && potPcnt < 60)
    {
-      modThrotRamp = FP_FROMINT(MAP(potPcnt, 10, 100, 1, Param::GetInt(Param::throtramp)));
+      modThrotRamp = FP_FROMINT(MAP(potPcnt, 10, 60, 1, Param::GetInt(Param::throtramp)));
    }
    else
    {

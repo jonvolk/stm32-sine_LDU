@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/jsphuebner/stm32-sine.svg?branch=master)](https://travis-ci.com/jsphuebner/stm32-sine)
 
-#Fork of Johannes' open inverter project. Adds fweakstrt value which modifies fweak value with throttle 
+# Fork of Johannes' open inverter project. Adds fweakstrt value which modifies fweak value with throttle 
 
 # stm32-sine
 Main firmware of the Huebner inverter project

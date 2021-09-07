@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.com/jsphuebner/stm32-sine.svg?branch=master)](https://travis-ci.com/jsphuebner/stm32-sine)
 
+#Fork of Johannes' open inverter project. Adds fweakstrt value which modifies fweak value with throttle 
+
 # stm32-sine
 Main firmware of the Huebner inverter project
 This firmware runs on any revision of the "Huebner" hardware https://github.com/jsphuebner/inverter-hardware as well as any derivatives as the Open Source Tesla controller https://github.com/damienmaguire
